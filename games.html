@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <button class="menu-btn" onclick="toggleMenu()">☰</button>
+        <div class="logo">SABDA</div>
+    </header>
+
+    <!-- Menu Slide Samping (Sidebar) -->
+    <nav class="sidebar" id="mySidebar">
+        <a href="index.html" onclick="toggleMenu()">Halaman Depan</a>
+        <a href="index.html#about" onclick="toggleMenu()">Tentang Kami</a>
+        <a href="index.html#peta" onclick="toggleMenu()">Peta Interaktif</a>
+        <a href="index.html#timeline" onclick="toggleMenu()">Timeline Prasasti</a>
+        <a href="index.html#games" onclick="toggleMenu()">Games Sejarah</a>
+        <a href="cs.html" onclick="toggleMenu()">Customer Service</a>
+    </nav>
+    
+    <div class="quiz-container">
+        <div id="start-screen">
+            <h1 id="quiz-title">Question 1</h1>
+            <button id="info-btn">Klik untuk Info</button>
+            <div id="info-panel" class="hidden">
+                <p>Cara Bermain:<br> 
+                1. Terdapat 10 pertanyaan pilihan ganda. <br>
+                2. Pilih satu jawaban yang menurutmu benar.<br>
+                2. Jawaban yang telah dipilih tidak bisa diubah.<br> 
+                3. Skor dihutung berdasarkan jumlah jawaban benar.<br> 
+                4. Cepatlah menjawab untuk mendapat waktu terbaik!</p>
+                <button id="start-btn">Mulai / Start</button>
+            </div>
+        </div>
+
+        <div id="quiz-screen" class="hidden">
+            <div class="header">
+                <span id="timer">Waktu: 00:00</span>
+                <span id="progress">Soal 1 / 10</span>
+            </div>
+            <h2 id="question-text">Pertanyaan akan muncul di sini?</h2>
+            <div id="answer-buttons" class="btn-grid">
+                </div>
+        </div>
+
+        <div id="result-screen" class="hidden">
+            <h2>Hasil Akhir</h2>
+            <p id="final-score">Skor: 0</p>
+            <p id="stats">Benar: 0 | Salah: 0</p>
+            <p id="final-time">Total Waktu: 00:00</p>
+            <button onclick="location.reload()">Main Lagi</button>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+          function toggleMenu() {
+            var sidebar = document.getElementById("mySidebar");
+            sidebar.classList.toggle("active");
+        }
+  const questions = [
+    { q: "Prasasti Sukawana dikenal sebagai salah satu prasasti tertua di Bali yang berasal dari tahun?", a: [ {t: "A. 882 M", c: true}, {t: "B. 772 M", c: false}, {t: "C. 982 M", c: false}, {t: "D. 822 M", c: false} ] },
+    { q: "Nama kuno Pulau Bali yang disebut dalam Prasasti Blanjong adalah", a: [ {t: "A. Nusantara", c: false}, {t: "B. Walidwipa", c: true}, {t: "C. Dwipantara", c: false}, {t: "D. Swarnadwipa", c: false} ] },
+    { q: "", a: [ {t: "A. ", c: false}, {t: "B. ", c: false}, {t: "C. ", c: false}, {t: "D. ", c: true} ] },
+   { q: "", a: [ {t: "A. ", c: false}, {t: "B. ", c: false}, {t: "C. ", c: false}, {t: "D. ", c: true} ] },
+    { q: "", a: [ {t: "A. ", c: false}, {t: "B. ", c: false}, {t: "C. ", c: true}, {t: "D. ", c: false} ] },
+   { q: "", a: [ {t: "A. ", c: true}, {t: "B. ", c: false}, {t: "C. ", c: false}, {t: "D. ", c: false} ] },
+    { q: "", a: [ {t: "A. ", c: false}, {t: "B. ", c: false}, {t: "C. ", c: true}, {t: "D. ", c: false} ] },
+    { q: "", a: [ {t: "A. ", c: false}, {t: "B. ", c: false}, {t: "C. ", c: false}, {t: "D. ", c: true} ] },
+      { q: "", a: [ {t: "A. ", c: true}, {t: "B. ", c: false}, {t: "C. ", c: false}, {t: "D. ", c: false} ] },
+    { q: "Siapa penemu lampu?", a: [ {t: "Einstein", c: false}, {t: "Newton", c: false}, {t: "Edison", c: true}, {t: "Tesla", c: false} ] },
+    // ... dst (untuk contoh ini saya buat singkat, silakan isi sampai 10)
+];
+
+let currentIdx = 0;
+let score = 0;
+let correctCount = 0;
+let wrongCount = 0;
+let seconds = 0;
+let timerInterval;
+
+const startScreen = document.getElementById('start-screen');
+const infoPanel = document.getElementById('info-panel');
+const quizScreen = document.getElementById('quiz-screen');
+const resultScreen = document.getElementById('result-screen');
+const questionText = document.getElementById('question-text');
+const answerButtons = document.getElementById('answer-buttons');
+const timerDisplay = document.getElementById('timer');
+
+// 1. Tampilkan Info
+// 1. Tampilkan Info & Manipulasi Tampilan Layar Awal
+const quizTitle = document.getElementById('quiz-title');
+const infoBtn = document.getElementById('info-btn');
+
+infoBtn.addEventListener('click', () => {
+    // Tampilkan panel peraturan
+    infoPanel.classList.remove('hidden');
+    
+    // Ubah judul menjadi Peraturan Quiz
+    quizTitle.innerText = "Peraturan Quiz";
+    
+    // Sembunyikan tombol "Klik untuk Info" agar tidak muncul lagi
+    infoBtn.classList.add('hidden');
+});
+
+// 2. Mulai Kuis
+document.getElementById('start-btn').addEventListener('click', () => {
+    startScreen.classList.add('hidden');
+    quizScreen.classList.remove('hidden');
+    startTimer();
+    showQuestion();
+});
+
+function startTimer() {
+    timerInterval = setInterval(() => {
+        seconds++;
+        let mins = Math.floor(seconds / 60);
+        let secs = seconds % 60;
+        timerDisplay.innerText = `Waktu: ${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+    }, 1000);
+}
+
+function showQuestion() {
+    const q = questions[currentIdx];
+    questionText.innerText = q.q;
+    document.getElementById('progress').innerText = `Soal ${currentIdx + 1} / ${questions.length}`;
+    answerButtons.innerHTML = '';
+
+    q.a.forEach(ans => {
+        const btn = document.createElement('button');
+        btn.innerText = ans.t;
+        btn.onclick = () => selectAnswer(btn, ans.c);
+        answerButtons.appendChild(btn);
+    });
+}
+
+function selectAnswer(btn, isCorrect) {
+    const allBtns = answerButtons.querySelectorAll('button');
+    allBtns.forEach(b => b.disabled = true); // Kunci tombol agar tidak klik dua kali
+
+    if (isCorrect) {
+        btn.classList.add('correct');
+        score += 10;
+        correctCount++;
+    } else {
+        btn.classList.add('wrong');
+        wrongCount++;
+    }
+
+    setTimeout(() => {
+        currentIdx++;
+        if (currentIdx < questions.length) {
+            showQuestion();
+        } else {
+            showResult();
+        }
+    }, 1000); // Tunggu 1 detik sebelum pindah soal
+}
+
+function showResult() {
+    clearInterval(timerInterval);
+    quizScreen.classList.add('hidden');
+    resultScreen.classList.remove('hidden');
+    document.getElementById('final-score').innerText = `Skor Akhir: ${score}`;
+    document.getElementById('stats').innerText = `Benar: ${correctCount} | Salah: ${wrongCount}`;
+    document.getElementById('final-time').innerText = `Total Waktu: ${timerDisplay.innerText.replace('Waktu: ', '')}`;
+}
+</script>
+<style>
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    background-color: #161625;
+    color: white;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+}
+
+.menu-btn {
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+}
+
+/* Sidebar / Slide Menu */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #161625;
+    padding-top: 80px;
+    transition: 0.3s ease;
+    z-index: 99;
+}
+
+.sidebar.active {
+    left: 0;
+}
+
+.sidebar a {
+    display: block;
+    padding: 15px 25px;
+    color: #bbb;
+    text-decoration: none;
+    font-size: 1.1rem;
+    border-bottom: 1px solid #222;
+}
+
+.sidebar a:hover {
+    background-color: #0f0f1a;
+    color: white;
+}
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 20;
+        height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), 
+                url('https://images.pexels.com/photos/27375317/pexels-photo-27375317.jpeg?_gl=1*14l1k2z*_ga*MTg1ODc1NzAyMS4xNzc5ODQ1MTM4*_ga_8JE65Q40S6*czE3Nzk4NDUxMzgkbzEkZzEkdDE3Nzk4NDc1OTkkajM2JGwwJGgw') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: black;
+}
+
+.quiz-container {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+}
+.quiz-container p {
+   text-align: left;
+   padding-left: 10px;
+   margin-inline: 5px;
+   justify-content: space-between;
+}
+
+.hidden { display: none; }
+.info-btn {
+  color: black;
+}
+.btn-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 20px;
+}
+.start-btn {
+      text-align: right;
+}
+button {
+    padding: 12px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+button:hover { background-color: #0056b3; }
+
+/* Warna Benar/Salah */
+.correct { background-color: #28a745 !important; }
+.wrong { background-color: #dc3545 !important; }
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    font-weight: bold;
+    /* Tambahkan ini di bagian paling bawah style.css */
+}
+</style>

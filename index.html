@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SABDA - Kartografi Digital Sejarah Bali</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigasi Atas -->
+    <header>
+        <button class="menu-btn" onclick="toggleMenu()">☰</button>
+        <div class="logo">SABDA</div>
+    </header>
+
+    <!-- Menu Slide Samping (Sidebar) -->
+    <nav class="sidebar" id="mySidebar">
+        <a href="#" onclick="toggleMenu()">Halaman Depan</a>
+        <a href="#about" onclick="toggleMenu()">Tentang Kami</a>
+        <a href="#peta" onclick="toggleMenu()">Peta Interaktif</a>
+        <a href="#timeline" onclick="toggleMenu()">Timeline Prasasti</a>
+        <a href="#games" onclick="toggleMenu()">Games Sejarah</a>
+        <a href="cs.html" onclick="toggleMenu()">Customer Service</a>
+    </nav>
+
+    <!-- Konten Utama / Hero Banner -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1> ᬒᬁ ᬲ᭄ᬯᬲ᭄ᬢ᭄ᬬ ᬲ᭄ᬢᬸ᭞</h1>
+            <h2>Selamat Datang! di Website </h2>
+            <h3>SABDA</h3>
+            <p> Jelajahi garis waktu, visualisasi spasial, dan manuskrip lontar kuno Bali dalam satu sistem informasi digital yang interaktif. Temukan akar sejarahmu secara lebih kontestual.
+            </p>
+            <a href="#about" class="btn-mulai">Mulai Jelajah 
+           </a>
+        </div>
+    </section>
+    
+    <!-- Bagian Tentang Kami -->
+   <section id="about" class="about-section">
+  <div class="container">
+    <h1> Tentang Kami</h1>
+    <img src=https://images.pexels.com/photos/18772367/pexels-photo-18772367.jpeg?_gl=1*18bidt1*_ga*MTg1ODc1NzAyMS4xNzc5ODQ1MTM4*_ga_8JE65Q40S6*czE3Nzk4NDUxMzgkbzEkZzEkdDE3Nzk4NDY1NDIkajYwJGwwJGgw class="foto-sabda">
+     <div class="about-underline"></div>
+    <h2 class="about-title">Apa itu SABDA?</h2>
+    
+    <div class="about-content">
+      <p>
+        <strong>SABDA</strong> (Kartografi Digital Sejarah) adalah platform inovatif yang dirancang untuk memetakan dan melestarikan kekayaan sejarah serta manuskrip kuno secara digital. Melalui visualisasi peta interaktif, kami berkomitmen untuk membantu Anda menemukan akar sejarah secara lebih kontekstual, mendalam, dan mudah diakses.
+      </p>
+      <p>
+        Kami menjembatani kesenjangan antara masa lalu dan teknologi modern, memungkinkan peneliti, pelajar, maupun masyarakat umum untuk menjelajahi lokasi geografis yang menjadi saksi bisu perjalanan sejarah bangsa.
+      </p>
+    </div>
+  </div>
+</section>
+
+    <!-- KONTEN BARU: Peta Interaktif -->
+    <section id="peta" class="peta-section">
+        <h2>Peta Kartografi Digital</h2>
+        <p class="sub-title">Pilih titik lokasi pada peta untuk melihat manuskrip/lontar sejarah terkait.</p>
+        
+        <div class="peta-container">
+            <!-- Area Gambar Peta (Menggunakan bentuk geometris sebagai simulasi peta Bali) -->
+            <div class="peta-box">
+                <p style="color: #666; margin-bottom: 10px;">[ Fitur ini masih dalam tahap pengembangan.]<br> [Simulasi Peta Bali ]</p>
+                <!-- Titik Interaktif (Pin) -->
+                <button class="pin-point" style="top: 30%; left: 30%;" onclick="tampilkanSinopsis('Prasasti Sukawana', 'Prasasti Sukawana (882 M) merupakan salah satu prasasti tertua di Bali yang menyebutkan tentang sistem pemerintahan dan pertanian pada masa itu.', 'Aka i sabha... (Teks Bali Kuno/Kawi)', 'Maka di pertemuan... (Teks Indonesia)', 'Munggwing paruman... (Teks Bali)', 'Thus in the assembly... (Teks Inggris)')">📍</button>
+                <button class="pin-point" style="top: 55%; left: 65%;" onclick="tampilkanSinopsis('Prasasti Blanjong', 'Lontar ini menceritakan garis keturunan raja-raja di Bali, khususnya masa kejayaan Kerajaan Gelgel yang menjadi pilar identitas budaya Bali.', 'Bagian A\n 1. śākabde śara-vahni-mūrti-gaṇite māse tathā phalguṇe (sārā) - - -\n2. - (rā) - (taki) nasva(kṣā) - rādhāyajihitivārovinihatyavairini - h- ṅ(s) -śākabde śara-vahni-mūrti-gaṇite māse tathā phalguṇe (sārā) - - -\n 3. - - (hī) - (ja)vampuraṅ [S: siṅhadvāla, D: siṅhārccala] pure(nika) - i - ya - - ta - - t -\n 4. - - // (śa) [S: –, D: 835] vulan phalguṇa - - - - śrī kesarī - - -\n 5. - - - raḥ di gurun di s(u)val dahumalahaṅ musuḥdho - ṅka - (rana) - - - (tah)di kutarā -/n 6. nnata - (tabhāja) - kabudhi kabudhi//\n Bagian B\n 1. sva - - raṭapratāpamahi - (h) - - ścodayaḥ dhvastārāti tamaścayo (buga)na\n 2. - samārggaraṅgapriyaḥ padmoboi - (āṣa)seravirabūdhā(ś)ā - - naḥkṛtiḥ vālidvīpa -\n 3. - (bhayebhīrovi) - - - (bhe)ri - na(bhū)pa(śa) (śi)nā(r)ā(g)atva - -\n 4.  [tidak terbaca]\n 5.  [tidak terbaca]\n 6.  [tidak terbaca]\n 7.  [tidak terbaca]\n 8. - - - - (śa) - (maśaṅśuta) - - -\n 9. - - - - (śepra)yātandīśārssyannantāriṣṛ u- - -\n 10. - - // (vija)yarka(ṇḍantaraṇḍ)antā(pe) kabhājobhṛśam // yenā e\n 11. - - - - nbhidyā(ṣaṭa)laṅvidhāyuṅgurubhiḥ sarrundhyaśatrūnyudh(i)\n 12. maha - ha(dv)iparāgrevairimahibhujā(ṅ) ṣṛjutaraḥkamp- -\n (Teks Bali Kuno/Kawi/Sansekerta)', 'Pada tahun 835 çaka bulan phalguna, seorang raja yang mempunyai kekuasaan di seluruh penjuru dunia beristana di keraton Sanghadwala, bernama Çri Kesari telah mengalahkan musuh-musuhnya di Gurun dan di Swal. Inilah yang harus diketahui sampai kemudian hari (Teks Indonesia)', 'Kacerita sane mangkin... (Teks Bali)', 'In the Śaka year 835, in the month of Phalguna, there was a king who held power throughout the entire world and resided in the palace of Sanghadwala. His name was Śri Kesari, and he had defeated his enemies in Gurun and Swal. This is what should be known for future generations. (Teks Inggris)')">📍</button>
+            </div>
+
+            <!-- Panel Samping Kanan (Sinopsis) -->
+            <div class="sinopsis-box" id="sinopsisBox">
+                <h3>Pilih Titik di Peta</h3>
+                <p id="sinopsisTeks">Silakan klik salah satu pin lokasi berwarna merah di peta untuk memunculkan informasi sinopsis lontar.</p>
+                <button id="btnSelengkapnya" class="btn-baca" style="display: none;" onclick="bukaFullTeks()">Baca Selengkapnya</button>
+            </div>
+        </div>
+    </section>
+<!-- KONTEN BARU: Timeline Kronologi Sejarah Bali -->
+    <section id="timeline" class="timeline-section">
+        <h2>Runtutan Lini Masa Sejarah di Bali</h2>
+        <img src="https://images.pexels.com/photos/30719635/pexels-photo-30719635.jpeg?_gl=1*1x0ws9y*_ga*MTg1ODc1NzAyMS4xNzc5ODQ1MTM4*_ga_8JE65Q40S6*czE3Nzk5NzEwODckbzIkZzEkdDE3Nzk5NzExNjEkajU5JGwwJGgw" class="foto-timeline">
+        <a href="timeline.html" class="timeline-start">start 
+        </a>
+        </section>
+
+    <section id="games" class="games-section">
+      <h2>Game Quiz Sejarah Bali</h2>
+      <img src="https://images.pexels.com/photos/8117534/pexels-photo-8117534.jpeg?_gl=1*1mj924g*_ga*MTg1ODc1NzAyMS4xNzc5ODQ1MTM4*_ga_8JE65Q40S6*czE3ODAxMDMwNjMkbzQkZzEkdDE3ODAxMDMwODYkajM3JGwwJGgw" class="foto-games">
+      <a href="games.html" class="games-start">start</a>
+    </section>
+<!-- ================= SECTION KHUSUS: LATAR BELAKANG & KREATOR ================= -->
+    <!-- id="site-credits" memastikan section ini 100% berbeda dan terpisah dari id="about" -->
+    <section id="site-credits" class="credits-section">
+        <div class="credits-container">
+            <div class="credits-block-text">
+                <h3 class="credits-heading">Questions and Answears</h3>
+                <h4 class="credits-subtitle">Apa alasan terbentuknya website ini? </h4>
+                <p class="credits-paragraph">
+                    Di indonesia sudah terdapat banyak informasi mengenai sejarah negara yang bisa dilihat di musium, yang dimana membuat orang malas untuk mempelajari sejarah negaranya sendiri dikarenakan akses yang terbatas oleh karena itu kami disini menyediakan sebuah platform berbasis website yaitu SABDA.
+                </p>
+            </div>
+
+            <!-- Blok Kanan: Informasi Pencipta -->
+            <div class="credits-block-team">
+                <h3 class="credits-subtitle">Siapa yang membuat website ini?</h3>
+                <p class="credits-paragraph">Website SABDA ini dibuat oleh   Wisnu, Surya dan Bagus siswa kelas XI SMA Negeri 1 Tabanan, Bali.</p>
+                <img src="https://images.pexels.com/photos/35690770/pexels-photo-35690770.jpeg?_gl=1*1yl8hx0*_ga*MTg1ODc1NzAyMS4xNzc5ODQ1MTM4*_ga_8JE65Q40S6*czE3ODAwNjI2MjYkbzMkZzEkdDE3ODAwNjI3OTkkajYwJGwwJGgw" class="foto-lontar">
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= SECTION FOOTER ORANYE ================= -->
+        <!-- ... kode footer kamu ... -->
+
+    <!-- Pop-up Modal untuk Teks Lengkap 4 Bahasa -->
+    <div class="modal" id="modalTeks">
+        <div class="modal-content">
+            <span class="close-btn" onclick="tutupFullTeks()">&times;</span>
+            <h2 id="modalJudul">Judul Lontar</h2>
+            <hr>
+            <div class="bahasa-container">
+                <div class="bahasa-item">
+                    <h4>Kawi / Bali Kuno</h4>
+                    <p id="teksKawi">-</p>
+                </div>
+                <div class="bahasa-item">
+                    <h4>Bahasa Indonesia</h4>
+                    <p id="teksIndo">-</p>
+                </div>
+                <div class="bahasa-item">
+                    <h4>Basa Bali</h4>
+                    <p id="teksBali">-</p>
+                </div>
+                <div class="bahasa-item">
+                    <h4>English</h4>
+                    <p id="teksInggris">-</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sistem Logika JavaScript -->
+    <script>
+        // Logika Sidebar
+        function toggleMenu() {
+            var sidebar = document.getElementById("mySidebar");
+            sidebar.classList.toggle("active");
+        }
+
+        // Variabel Global menampung data sementara
+        let dataAktif = {};
+
+        // Fungsi menampilkan sinopsis di sebelah kanan peta
+        function tampilkanSinopsis(judul, sinopsis, kawi, indo, bali, inggris) {
+            document.getElementById("sinopsisBox").innerHTML = `
+                <h3>${judul}</h3>
+                <p id="sinopsisTeks">${sinopsis}</p>
+                <button id="btnSelengkapnya" class="btn-baca" onclick="bukaFullTeks()">Baca Selengkapnya</button>
+            `;
+            
+            // Simpan data teks lengkap ke variabel global
+            dataAktif = { judul, kawi, indo, bali, inggris };
+        }
+
+        // Fungsi menampilkan jendela pop-up 4 bahasa
+        function bukaFullTeks() {
+            document.getElementById("modalJudul").innerText = dataAktif.judul;
+            document.getElementById("teksKawi").innerText = dataAktif.kawi;
+            document.getElementById("teksIndo").innerText = dataAktif.indo;
+            document.getElementById("teksBali").innerText = dataAktif.bali;
+            document.getElementById("teksInggris").innerText = dataAktif.inggris;
+            
+            document.getElementById("modalTeks").style.display = "flex";
+        }
+
+        // Fungsi menutup jendela pop-up
+        function tutupFullTeks() {
+            document.getElementById("modalTeks").style.display = "none";
+        }
+    </script>
+     <footer>
+    <p class="footer-description">&copy; 2026 | created by Wisnu, Surya & Bagus.</p>
+</footer>
+</body>
+</html>

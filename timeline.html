@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SABDA - Kartografi Digital Sejarah Bali</title>
+  
+  <!-- Tetap hubungkan ke file CSS yang sama agar desainnya konsisten -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ==================== HEADER & MENU NAVIGATION ==================== -->
+  <!-- Salin bagian ini persis dari file index.html kamu -->
+    <header>
+        <button class="menu-btn" onclick="toggleMenu()">☰</button>
+        <div class="logo">SABDA</div>
+    </header>
+
+    <!-- Menu Slide Samping (Sidebar) -->
+    <nav class="sidebar" id="mySidebar">
+        <a href="index.html" onclick="toggleMenu()">Halaman Depan</a>
+        <a href="index.html#about" onclick="toggleMenu()">Tentang Kami</a>
+        <a href="index.html#peta" onclick="toggleMenu()">Peta Interaktif</a>
+        <a href="index.html#timeline" onclick="toggleMenu()">Timeline Prasasti</a>
+        <a href="index.html#games" onclick="toggleMenu()">Games Sejarah</a>
+        <a href="cs.html" onclick="toggleMenu()">Customer Service</a>
+    </nav>
+            <section id="timeline" class="timeline-section">
+        <h2>Runutan Lini Masa Sejarah Bali</h2>
+        <p class="sub-title">Kronologi penerbitan prasasti dan sastra lontar yang membentuk identitas budaya Bali.</p>
+    
+            <div class="timeline-container">
+            <!-- Item 1 -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">882 M</div>
+                <div class="timeline-content">
+                    <h3>Prasasti Sukawana</h3>
+                    <img src= https://balebengong.id/wp-content/uploads/2021/02/Prasasti-Sukawana.jpeg class="foto-sukawan">
+                    <p> <b> Prasasti Sukawana AI</b>  merupakan salah satu tonggak sejarah paling krusial bagi Bali karena menjadi prasasti tertua di Bali yang memuat angka tahun secara tertulis.<br> 
+                    <span id="teks-lanjutan" class="hidden-text"> <b>Asal & Penemuan:</b> Ditemukan di daerah Kintamani dan saat ini disimpan di Pura Bale Agung, Desa Sukawana, Bangli.<br> <b>Bahasa & Aksara:</b> Ditulis menggunakan aksara Jawa Kuna (beberapa ahli menyebut varian aksara Bali Kuna) dan berbahasa Bali Kuno.<br> <b>Tokoh:</b> Prasasti ini dikeluarkan di Panglapuan (pusat administrasi/pengadilan) Singhamandawa. Menariknya, prasasti ini tidak menyebutkan nama raja yang memerintah saat itu secara spesifik.<br> <b>Isi Pokok:</b><br> <b>Keagamaan:</b> Perintah dari pusat kerajaan kepada para pejabat desa untuk membangun sebuah pertapaan (biku) yang dilengkapi pesanggrahan di daerah perbukitan Chintamani (Kintamani) dengan batas-batas arah mata angin yang jelas.<br> <b>Ekonomi & Agraris:</b>  Prasasti ini sangat penting bagi sejarah pertanian karena sudah memuat kata "huma" (sawah), yang menjadi bukti tertulis paling awal mengenai keberadaan sistem pertanian menetap/irigasi tradisional di Bali.<br> <b>Kutukan (Sapata):</b> Di bagian akhir terdapat formula kutukan yang sangat panjang bagi siapa saja (termasuk pejabat atau raja masa depan) yang berani melanggar ketetapan prasasti tersebut.
+                    </span>
+                    </p>
+                    <button onclick="toggleReadMore()" id="btn-readmore" class="btn-baca">Baca Selengkapnya</button>
+                </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">914 M</div>
+                <div class="timeline-content">
+                    <h3>Prasasti Blanjong</h3>
+                    <img src=https://cdn.phototourl.com/free/2026-05-29-0767dc3b-cb2a-44fc-a300-232e6acb491d.jpg class="foto-blanjong">
+                    <p> <b>Prasasti Blanjong</b> adalah peninggalan unik berbentuk pilar batu (sila prasasti), bukan lempengan tembaga, dan menjadi bukti tertulis tertua mengenai nama raja yang bertakhta di Bali.<br> <span id="teks-lanjutan2" class="hidden-text"> <b>Asal & Penemuan:</b> Berlokasi di Pura Blanjong, Banjar Blanjong, Desa Sanur Kauh, Denpasar Selatan. Berbentuk pilar silinder setinggi 177 cm dengan bagian atas berbentuk kelopak bunga teratai (lotus).<br> <b>Unsur Unik (Bilingual & Bisksrif):</b> Prasasti ini ditulis dengan teknik dua bahasa dan dua aksara sekaligus:<br> <b>Sisi pertama:</b> Menggunakan aksara Pre-Negari (India Utara) dengan bahasa Bali Kuna.<br> <b>Sisi kedua:</b> Menggunakan aksara Bali Kuna (Kawi) dengan bahasa Sansekerta.<br> <b>Tokoh:</b> Dikeluarkan oleh Raja Sri Kesari Warmadewa, pendiri Wangsa Warmadewa di Bali, yang beristana di Keraton Singhadwala.<br> <b>Isi Pokok:</b> Merupakan piagam kemenangan atau tugu kemenangan (Jaya Stambha) atas keberhasilan Raja Sri Kesari Warmadewa menaklukkan musuh-musuhnya di daerah Gurun (diidentifikasi sebagai Nusa Penida) dan Swal (Pantai Ketewel).<br>
+                    </span>
+                    </p>
+                   <button onclick="toggleReadMore2()" id="btn-readmore" class="btn-baca">Baca Selengkapnya</button>
+                </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">Abad 11-12</div>
+                <div class="timeline-content">
+                    <h3>Prasasti Penatahan Sasih 
+                    </h3>
+                    <img src=https://upload.wikimedia.org/wikipedia/commons/6/68/Moon_of_Pejeng%2C_Pura_Penataran_Sasih_1463.jpg class="foto-rajapatni">
+                    <p> <b>Prasasti Penataran Sasih</b> (sering disebut juga Prasasti Pejeng) adalah salah satu dokumen batu (sila prasasti) paling ikonik dari masa Bali Kuna karena dipahat pada sebuah tugu batu utuh dan terletak di salah satu pura paling bersejarah di Bali.<br> <span id="teks-lanjutan3" class="hidden-text">
+                    <b>Asal & Penemuan:</b> Terletak di Pura Penataran Sasih, Desa Pejeng, Kecamatan Tampaksiring, Gianyar.Pura ini dulunya merupakan pusat keagamaan dan pemerintahan pada masa Kerajaan Pejeng. <br> <b>Bahasa & Aksara:</b> Ditulis menggunakan aksara Bali Kuna yang rapi dan menggunakan bahasa Jawa Kuna (Kawi), menandakan era di mana pengaruh kebudayaan Jawa mulai berfusi secara damai dengan tradisi lokal Bali.<br> <b>Tokoh:</b> Berasal dari periode pemerintahan raja-raja keturunan dinasti Warmadewa sebelum masa penaklukan Majapahit.<br> <b>Isi Pokok:</b> <br> <b>Penetapan Tempat Suci:</b> Prasasti ini memuat peresmian dan pembatasan kesucian wilayah sekitar pura sebagai tempat pemujaan resmi kerajaan.<br> <b>Perlindungan Hukum Tradisional:</b> Mengatur tentang hak otonom para pendeta (biku) dan masyarakat desa dalam mengelola aset pura tanpa campur tangan berlebih dari punggawa kerajaan.<br> <b>Pusat Peradaban Pejeng:</b> Keberadaan prasasti ini di Pura Penataran Sasih (yang juga menyimpan Nekara Perunggu terbesar di dunia, Moko Pejeng) membuktikan bahwa Pejeng adalah pusat peradaban, spiritual, dan teknologi logam yang sangat maju di masa Bali Kuna.<br>
+                    </span>
+                    </p>
+                  <button onclick="toggleReadMore3()" id="btn-readmore" class="btn-baca">Baca Selengkapnya</button>
+                </div>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">1741 M</div>
+                <div class="timeline-content">
+                    <h3>Sastra Lontar Babad Dalem</h3>
+                    <img src=https://upload.wikimedia.org/wikipedia/commons/a/ad/Babad-dalem-01-250ppi_0001.jpg class="foto-dalem">
+                    <p>Berbeda dengan prasasti yang merupakan dokumen hukum kontemporer pada zamannya,<b>Babad Dalem</b> adalah karya sastra historiografi tradisional (kronik) yang ditulis di atas daun lontar.<br> <span id="teks-lanjutan4" class="hidden-text">
+                     <b>Bahasa & Karakter:</b> Ditulis menggunakan bahasa Jawa Kuna (Kawi Madya) dan bahasa Bali. Salah satu versi terkenalnya disusun kembali oleh Ida Pedanda Gede Rai Pidada dari Griya Pidada Klungkung pada tahun 1741.<br> <b>Isi Pokok:</b> <br>
+                     Mencatat silsilah, biografi, dan kisah pemerintahan raja-raja Bali dari Wangsa Kepakisan, dimulai dari penempatan Sri Aji Kresna Kepakisan sebagai penguasa Bali oleh Mahapatih Gajah Mada pasca-ekspedisi Majapahit tahun 1343 M.<br> Menceritakan masa kejayaan pusat pemerintahan Bali saat berada di Samprangan, peralihannya ke masa keemasan di Gelgel (Klungkung), hingga keruntuhan wilayah tersebut. Babad Dalem memadukan unsur fakta sejarah (nama tokoh dan tempat) dengan mitologi atau legitimasi spiritual, bertujuan untuk menegaskan kedaulatan, menyusun garis keturunan penguasa, serta menjelaskan tatanan sosial-keagamaan masyarakat Bali pasca-pengaruh Majapahit.<br>Menceritakan masa kejayaan pusat pemerintahan Bali saat berada di Samprangan, peralihannya ke masa keemasan di Gelgel (Klungkung), hingga keruntuhan wilayah tersebut.<br>
+                    </span>
+                    </p>
+                  <button onclick="toggleReadMore4()" id="btn-readmore" class="btn-baca">Baca Selengkapnya</button>
+                </div>
+            </div>
+        </div>
+    
+    </body>
+</html>
+    <script>
+        // Logika Sidebar
+        function toggleMenu() {
+            var sidebar = document.getElementById("mySidebar");
+            sidebar.classList.toggle("active");
+        }
+        function toggleReadMore() {
+    var teksLanjutan = document.getElementById("teks-lanjutan");
+    var tombolBaca = document.getElementById("btn-readmore");
+
+    // Jika teks sedang sembunyi, tampilkan teks dan ubah tombol jadi "Sembunyikan"
+    if (teksLanjutan.style.display === "none" || teksLanjutan.style.display === "") {
+        teksLanjutan.style.display = "inline";
+        tombolBaca.innerHTML = "Sembunyikan";
+    } else {
+        teksLanjutan.style.display = "none";
+        tombolBaca.innerHTML = "Baca Selengkapnya";
+    }
+}
+        function toggleReadMore2() {
+    var teksLanjutan2 = document.getElementById("teks-lanjutan2");
+    var tombolBaca2 = document.getElementById("btn-readmore2");
+    if (teksLanjutan2.style.display === "none" || teksLanjutan2.style.display === "") {
+        teksLanjutan2.style.display = "inline";
+        tombolBaca2.innerHTML = "Sembunyikan";
+    } else {
+        teksLanjutan2.style.display = "none";
+        tombolBaca2.innerHTML = "Baca Selengkapnya";
+    }
+}
+        function toggleReadMore3() {
+    var teksLanjutan3 = document.getElementById("teks-lanjutan3");
+    var tombolBaca3 = document.getElementById("btn-readmore3");
+    if (teksLanjutan3.style.display === "none" || teksLanjutan3.style.display === "") {
+        teksLanjutan3.style.display = "inline";
+        tombolBaca3.innerHTML = "Sembunyikan";
+    } else {
+        teksLanjutan3.style.display = "none";
+        tombolBaca3.innerHTML = "Baca Selengkapnya";
+    }
+}
+        function toggleReadMore4() {
+    var teksLanjutan4 = document.getElementById("teks-lanjutan4");
+    var tombolBaca4 = document.getElementById("btn-readmore4");
+    if (teksLanjutan4.style.display === "none" || teksLanjutan4.style.display === "") {
+        teksLanjutan4.style.display = "inline";
+        tombolBaca4.innerHTML = "Sembunyikan";
+    } else {
+        teksLanjutan4.style.display = "none";
+        tombolBaca4.innerHTML = "Baca Selengkapnya";
+    }
+}
+        </script>
+<style>/* Layout Halaman CS Baru */
+.timeline-section {
+  text-align: center;
+  padding: 60px 20px;
+}
+.timeline-section h2 {
+      font-size: 2rem;
+    color: #1a1a2e;
+    margin-bottom: 10px;
+}
+.timeline-container {
+    position: relative;
+    max-width: 800px;
+    margin: 40px auto 0 auto;
+    padding: 10px 0;
+    text-align: left;
+}
+.timeline-container::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background-color: #1a1a2e;
+    top: 0;
+    bottom: 0;
+    left: 20px; /* Diatur ke kiri agar sangat rapi saat dibuka di HP */
+    border-radius: 2px;
+}
+.timeline-item {
+    position: relative;
+    margin-bottom: 40px;
+    padding-left: 50px; /* Memberi ruang untuk garis dan lingkaran */
+}
+
+.timeline-dot {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background-color: #f1c40f; /* Warna emas ikonik SABDA */
+    border: 3px solid #1a1a2e;
+    border-radius: 50%;
+    top: 5px;
+    left: 14px; /* Pas di tengah-tengah garis vertikal */
+    z-index: 2;
+}
+.timeline-date {
+    font-weight: bold;
+    color: #f1c40f;
+    background-color: #1a1a2e;
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+.timeline-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border-left: 4px solid #1a1a2e;
+}
+.timeline-content h3 {
+    font-size: 1.3rem;
+    color: #8b5a2b;
+    margin-bottom: 8px;
+}
+.foto-sukawan { 
+  width: 100%; 
+  max-width: 400px
+  height: 180px; 
+  object-fit: cover; 
+  display: block;
+  margin: 15px auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+/* Sembunyikan teks lanjutan di awal */
+.hidden-text {
+    display: none;
+}
+
+/* Mengatur style tombol Baca Selengkapnya */
+.btn-baca {
+    background: none;
+    border: none;
+    background-color: white;
+    color: blue; /* Menyesuaikan warna tema cokelat emas website-mu */
+    font-weight: bold;
+    padding: 0;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 5px;
+    text-decoration: underline; /* Memberi garis bawah seperti link */
+}
+
+.btn-baca:hover {
+   background-color: white;
+    color: red; /* Warna sedikit berubah saat kursor mendekat */
+}
+.foto-blanjong {
+  width: 100%; 
+  max-width: 400px
+  height: 150px; 
+  object-fit: cover; 
+  display: block;
+  margin: 15px auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.foto-rajapatni {
+    width: 100%; 
+  max-width: 400px
+  height: 180px; 
+  object-fit: cover; 
+  display: block;
+  margin: 15px auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.foto-dalem {
+    width: 100%; 
+  max-width: 400px
+  height: 180px; 
+  object-fit: cover; 
+  display: block;
+  margin: 15px auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.timeline-content p {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+@media (min-width: 768px) {
+    .timeline-container::after {
+        left: 50%; /* Garis pindah ke tengah jika layar lebar */
+        margin-left: -2px;
+    }
+    
+    .timeline-item {
+        width: 50%;
+        padding-left: 0;
+    }
+    
+    /* Selang-seling kiri dan kanan */
+    .timeline-item:nth-child(odd) {
+        left: 0;
+        padding-right: 40px;
+        text-align: right;
+    }
+    
+    .timeline-item:nth-child(even) {
+        left: 50%;
+        padding-left: 40px;
+    }
+    
+    .timeline-item:nth-child(odd) .timeline-dot {
+        left: auto;
+        right: -10px;
+    }
+    
+    .timeline-item:nth-child(even) .timeline-dot {
+        left: -8px;
+    }
+    
+    .timeline-item:nth-child(odd) .timeline-content {
+        border-left: none;
+        border-right: 4px solid #1a1a2e;
+    }
+    

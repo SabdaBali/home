@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Service - SABDA</title>
+  
+  <!-- Tetap hubungkan ke file CSS yang sama agar desainnya konsisten -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ==================== HEADER & MENU NAVIGATION ==================== -->
+  <!-- Salin bagian ini persis dari file index.html kamu -->
+    <header>
+        <button class="menu-btn" onclick="toggleMenu()">☰</button>
+        <div class="logo">SABDA</div>
+    </header>
+
+    <!-- Menu Slide Samping (Sidebar) -->
+    <nav class="sidebar" id="mySidebar">
+        <a href="index.html" onclick="toggleMenu()">Halaman Depan</a>
+        <a href="index.html#about" onclick="toggleMenu()">Tentang Kami</a>
+        <a href="index.html#peta" onclick="toggleMenu()">Peta Interaktif</a>
+        <a href="index.html#timeline" onclick="toggleMenu()">Timeline Prasasti</a>
+        <a href="idex.html#games" onclick="toggleMenu()">Games Sejarah</a>
+        <a href="cs.html" onclick="toggleMenu()">Customer Service</a>
+    </nav>
+  <!-- ================================================================== -->
+
+  <!-- KONTEN KHUSUS HALAMAN CUSTOMER SERVICE -->
+  <main class="cs-page-container">
+  <div class="cs-box-wrapper">
+    <h2>Layanan Pengguna (Customer Service)</h2>
+    <p class="cs-subtitle">Silakan hubungi tim kami yang siap membantu Anda:</p>
+    
+    <div class="cs-cards-container">
+      
+      <!-- KOTAK TIM 1: SKY -->
+      <div class="cs-card">
+        <!-- Kamu bisa ganti pakai link foto profil jika ada -->
+        <h3>Wisnu Wijaya</h3>
+        <a href="https://wa.me/6285792130253" class="btn-wa-card">
+          Hubungi Wisnu
+        </a>
+      </div>
+
+      <!-- KOTAK TIM 2: TEMAN SKY -->
+      <div class="cs-card">
+        <h3>Surya Namaskara</h3>
+        <a href="https://wa.me/6285737403659" class="btn-wa-card btn-temen">
+          Hubungi Surya
+        </a>
+      </div>
+
+      <div class="cs-card">
+        <h3>Bagus Ari</h3>
+        <a href="https://wa.me/6289685811446" class="btn-wa-card btn-temen">
+          Hubungi Bagus
+        </a>
+    </div>
+  </div>
+</main>
+
+</body>
+</html>
+    <script>
+        // Logika Sidebar
+        function toggleMenu() {
+            var sidebar = document.getElementById("mySidebar");
+            sidebar.classList.toggle("active");
+        }
+        </script>
+<style>/* Layout Halaman CS Baru */
+.cs-page-container {
+     height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), 
+                url('https://images.pexels.com/photos/27375317/pexels-photo-27375317.jpeg?_gl=1*14l1k2z*_ga*MTg1ODc1NzAyMS4xNzc5ODQ1MTM4*_ga_8JE65Q40S6*czE3Nzk4NDUxMzgkbzEkZzEkdDE3Nzk4NDc1OTkkajM2JGwwJGgw') no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh; /* Membuat konten di tengah vertikal */
+  padding: 20px;
+  background-color: #ffffff; 
+}
+
+/* Pembungkus utama halaman CS */
+.cs-page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+  padding: 40px 20px;
+  background-color: #ffffff;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.cs-box-wrapper {
+  max-width: 900px;
+  width: 100%;
+  text-align: center;
+}
+
+.cs-box-wrapper h2 {
+  color: #ffffff;
+  font-size: 2rem;
+}
+
+.cs-subtitle {
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+/* Container untuk menaruh dua kotak secara bersebelahan */
+.cs-cards-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px; /* Jarak antar kotak teks */
+  flex-wrap: wrap; /* Supaya otomatis menyusun ke bawah saat dibuka di HP */
+}
+
+/* Desain Kotak Teks Terpisah (Card) */
+.cs-card {
+  background: white;
+  margin-bottom:5px;
+  padding: 10px 15px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  width: 250px; /* Lebar masing-masing kotak */
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #eaecf0;
+}
+
+/* Efek sedikit terangkat saat kartu disentuh/diarahkan mouse */
+.cs-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+/* Desain Lingkaran Inisial Nama/Avatar */
+
+.cs-card h3 {
+  color: #1a1a2e;
+  margin-bottom: 5px;
+  font-size: 1.3rem;
+}
+
+
+/* Desain Tombol WA di dalam Kotak */
+.btn-wa-card {
+  display: block;
+  padding: 12px;
+  background-color: #128c7e;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  transition: background-color 0.2s;
+}
+
+.btn-wa-card:active {
+  transform: scale(0.98);
+}
+
+/* Pembeda warna sedikit untuk tombol teman */
+.btn-temen {
+  background-color: #128c7e;
+}
+/* Link Menu Aktif (Penanda halaman yang sedang dibuka) */
+.nav-menu a.active {
+  font-weight: bold;
+  border-bottom: 2px solid #d19a66; /* Garis bawah warna cokelat tombol */
+}
+}</style>
