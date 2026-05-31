@@ -129,6 +129,35 @@ header {
     margin-top: 20px;
 }
 
+@media (min-width: 768px) {
+    .hero-container {
+        display: flex; /* Membuat teks dan gambar berjajar kiri-kanan */
+        align-items: center;
+        justify-content: space-between;
+        max-width: 1100px;
+        margin: 0 auto;
+        height: 80vh; /* Tinggi area hero */
+        gap: 50px;
+    }
+
+    .hero-text {
+        flex: 1;
+        text-align: left; /* Teks rata kiri seperti di gambar referensi */
+    }
+
+    .hero-text h1 {
+        font-size: 45px; /* Tulisan lebih besar di laptop */
+    }
+
+    .hero-image {
+        flex: 1;
+    }
+
+    .hero-image img {
+        margin-top: 0;
+        box-shadow: -20px 20px 0px rgba(210, 166, 121, 0.2); /* Efek dekorasi gambar */
+    }
+}
 /* Style untuk Section Tentang Kami */
 .about-section {
   padding: 60px 20px;
@@ -370,6 +399,22 @@ header {
     line-height: 1.5;
     font-style: italic;
 }
+/* Kode ini HANYA berjalan jika web dibuka di layar komputer/desktop (lebar minimal 768px) */
+@media (min-width: 768px) {
+    .peta-section {
+        display: flex;
+        flex-direction: row; /* Memaksa konten berjejer ke samping */
+        justify-content: space-between;
+        align-items: center;
+        gap: 30px; /* Jarak antara peta dan teks penjelasan */
+        max-width: 1000px; /* Membatasi lebar maksimal agar tidak terlalu melar */
+        margin: 0 auto; /* Membuat block ini otomatis di tengah layar */
+    }
+
+    .peta-box, .peta-info {
+        flex: 1; /* Membagi ruang sama rata (50% kiri, 50% kanan) */
+    }
+}
 /* --- GAYA TAMPILAN FITUR TIMELINE (Tambahkan di bagian paling bawah) --- */
 .timeline-section { 
   font-size: 1.2rem;
@@ -482,6 +527,7 @@ credits-section {
     font-size: 1rem;
     line-height: 1.5;
     color: #555555;
+    padding: 15px 10px;
     text-align: justify;
 }
 .foto-lontar {
@@ -502,6 +548,29 @@ credits-section {
 }
 
 /* Pengaturan khusus jika dibuka di smartphone (Acode Preview) */
+@media (min-width: 992px) {
+    .credits-section {
+        display: flex;
+        align-items: center; /* Teks dan gambar sejajar vertikal di tengah */
+        gap: 50px; /* Jarak antara teks dan gambar */
+        max-width: 1100px;
+        margin: 0 auto;
+        text-align: left; /* Teks rata kiri */
+    }
+
+    .credits-paragraph {
+        flex: 1; /* Mengambil 50% ruang */
+    }
+
+    .foto-lontar {
+        flex: 1; /* Mengambil 50% ruang */
+    }
+
+    .foto-lontar {
+        width: 100%;
+        border-radius: 10px;
+    }
+}
 @media (max-width: 768px) {
     #site-credits .team-cards-flex {
         flex-direction: column; /* Nama Aristya dan Ananta akan tersusun vertikal di HP */
